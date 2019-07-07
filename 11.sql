@@ -14,6 +14,8 @@
 -- `to_date` date NOT NULL,
 -- PRIMARY KEY (`emp_no`,`dept_no`));
 
-select e.emp_no, m.emp_no as manager_no 
+------不知道怎么过的
+select e.emp_no emp_no, m.emp_no manager_no
 from dept_emp as e, dept_manager as m
-where dept_emp -- TODO
+where e.to_date = '9999-01-01' and m.to_date = '9999-01-01' and e.emp_no != m.emp_no
+and e.dept_no = m.dept_no
